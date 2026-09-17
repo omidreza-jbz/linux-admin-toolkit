@@ -1,0 +1,3 @@
+Sep 17 12:00:01 server sshd[1234]: Failed password for invalid user admin from 192.168.1.50 port 45622 ssh2
+Sep 17 12:00:03 server sshd[1235]: Failed password for root from 192.168.1.50 port 45624 ssh2
+Sep 17 12:00:05 server sshd[1236]: Failed password for root from 192.168.1.50 port 45626 ssh2
