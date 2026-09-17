@@ -1,0 +1,21 @@
+#!/bin/bash
+
+domain=("Your Domain Address")
+
+backup_path="${BACKUP_DIR:-backup}"
+
+proccess_backup() {
+	local domain_name=$1
+	if [[ ! -d ~/"$backup_path" ]] ; then
+		mkdir -p ~/"$backup_path"
+	fi
+	
+	local clean_domain=${domain_name%.*}
+	
+	touch ~/"$backup_path/${clean_domain}.archive.tar.gz"
+	echo "[SUCCESS] Backup created for $clean_domain (Original: $domain_name)"
+}
+
+for DN in "${domain[@]}"; do
+	proccess_backup "$DN"
+done

@@ -1,0 +1,15 @@
+#!/bin/bash
+
+log_archiver(){
+	local archive_file="$1"
+	if [[ -f "$archive_file" ]]; then
+		gzip "$archive_file"
+		echo "The file "$archive_file".gz Archived"
+	else
+		echo "The file "$archive_file" NOT FOUND"
+	fi
+}
+
+for file in *.log; do
+	log_archiver "$file"
+done

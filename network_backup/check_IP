@@ -1,0 +1,14 @@
+#!/bin/bash
+
+check_host() {
+	local IPADDR="$1"
+	if ping -c 1 -W 1 "$IPADDR" > /dev/null 2>&1; then
+		echo "[UP] $IPADDR is reachable"
+	else
+		echo "[DOWN] $IPADDR is unreachable"
+	fi
+}
+
+for host in 8.8.8.8 1.1.1.1 192.0.2.1; do
+	check_host "$host"
+done

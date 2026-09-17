@@ -1,0 +1,8 @@
+#!/bin/bash
+
+
+letancy=$(ping -c 5 8.8.8.8 | grep avg | awk -F / '{print $5}')
+
+if (( $(echo "$letancy > 100" | bc -l) ));then
+	curl -d "ahhhhhhhhh internet is sooooo baaaaddddddd" ntfy.sh/linux_ssh_gemini_project
+fi
